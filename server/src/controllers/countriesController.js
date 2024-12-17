@@ -2,11 +2,18 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 
 module.exports = {
     getAvailableCountries: async(req,res) => {
-        const response = await fetch('https://date.nager.at/api/v3/AvailableCountries');
-        const countriesList = await response.json()
-        if(countriesList) return res.status(200).json(countriesList)
+        try {
+            const response = await fetch('https://date.nager.at/api/v3/AvailableCountries');
+            const countriesList = await response.json()
+            if(countriesList) return res.status(200).json(countriesList)
+            
+            return res.status(404).json({messagge: 'Countries not found'})
 
-        return res.status(404).json({messagge: 'Countries not found'})
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json({message: 'something was wrong', error})
+        }
+
     },
 
     getCountryInfo: async (req, res) => {
