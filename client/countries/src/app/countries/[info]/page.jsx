@@ -35,9 +35,7 @@ export default function Info({ params }) {
         <>
             {country && (
                 <div className="min-h-screen flex flex-col items-center bg-white text-gray-800 p-6">
-                    {/* Country Info Container */}
                     <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-6 md:p-8">
-                        {/* Flag and Country Name */}
                         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
                             <img
                                 src={findFlag?.flag || ''}
@@ -49,7 +47,6 @@ export default function Info({ params }) {
                             </h1>
                         </div>
 
-                        {/* Bordering Countries */}
                         {borders?.length > 0 && (
                             <div>
                                 <h2 className="text-xl font-semibold mb-4 text-gray-700">
