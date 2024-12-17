@@ -3,7 +3,7 @@ const { getAvailableCountries, getCountryInfo, getPopulationData, getFlagUrlCoun
 const router = express.Router()
 
 
-router.get('/available-countries', getAvailableCountries)
+router.get('/availables-countries', getAvailableCountries)
 
 
 
